@@ -1,0 +1,15 @@
+<h1>Users</h1>
+
+
+
+<table border>
+<% @users.each do |usr| %>
+<tr>
+
+<td><%= link_to usr.name, user_path(usr)%></td>
+<td><%= button_to 'Edit', edit_user_path(usr),method:'get' %></td>
+<td><%= button_to 'Delete', user_path(usr),method:'delete', data:{confirm:'Are you sure to delete' }%></td>
+
+</tr>
+<% end %>
+</table>
